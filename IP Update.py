@@ -28,7 +28,7 @@ def get_lastIp(fPath):
 
 def secret_ip(sip):
     sip_arr=sip.split('.')
-    sip_arr[0]=str(int(sip_arr[0])+1)
+    sip_arr[0]=str(int(sip_arr[0]))
     dip=sip_arr[0]+"."+sip_arr[1]+"."+sip_arr[2]+"."+sip_arr[3]
     return(dip)
 
@@ -41,7 +41,10 @@ def update_ipfile(newIp, fPath):
 def git_push():
     subprocess.run(["git", "add", "."])
     subprocess.run(["git", "commit", "-m", "update ip"])
-    subprocess.run(["git", "push", "origin", "main"])
+    try:
+        subprocess.run(["git", "push", "origin", "main"])
+    except:
+        print("Error")
 
 fPath = os.getcwd()+"\\IpRecord.txt"
 #print(fPath)
