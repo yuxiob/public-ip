@@ -34,7 +34,7 @@ def update_ipfile(newIp, fPath):
 
 def git_push():
     subprocess.run(["git", "commit", "-m", "update ip"])
-    subprocess.run(["git", "push", "origin", "master"])
+    subprocess.run(["git", "push", "origin", "main"])
 
 fPath = os.getcwd()+"\\IpRecord.txt"
 #print(fPath)
@@ -42,4 +42,4 @@ oldIp = get_lastIp(fPath)
 newIp = get_public_ip()
 if oldIp != newIp:
     update_ipfile(newIp, fPath)
-    git_push
+git_push()
