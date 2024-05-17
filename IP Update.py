@@ -29,7 +29,6 @@ def get_lastIp(fPath):
 def secret_ip(sip):
     sip_arr=sip.split('.')
     sip_arr[3]=str(int(sip_arr[3]) + 1)
-    sip_arr[2]=str(int(sip_arr[2]) + 1)
     dip=sip_arr[0]+"."+sip_arr[1]+"."+sip_arr[2]+"."+sip_arr[3]
     return(dip)
 
